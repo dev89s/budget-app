@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_07_155935) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_07_210120) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,9 +23,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_155935) do
     t.index ["author_id"], name: "index_categories_on_author_id"
   end
 
+  create_table "categories_purchases", id: false, force: :cascade do |t|
+    t.bigint "purchase_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["purchase_id", "category_id"], name: "index_categories_purchases_on_purchase_id_and_category_id"
+  end
+
   create_table "purchases", force: :cascade do |t|
-    t.string "name"
-    t.decimal "amount"
+    t.string "name", null: false
+    t.decimal "amount", precision: 10, scale: 2
     t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,5 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_155935) do
   end
 
   add_foreign_key "categories", "users", column: "author_id"
+  add_foreign_key "categories_purchases", "categories"
+  add_foreign_key "categories_purchases", "purchases"
   add_foreign_key "purchases", "users", column: "author_id"
 end
