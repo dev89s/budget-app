@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :purchases
   has_many :categories
-  validates :firstName, presence: true, length: { minumum: 3, maximum: 100 }
-  validates :lastName, presence: true, length: { minumum: 3, maximum: 100 }
+  validates :firstName, presence: true, length: { minimum: 3, maximum: 100 }
+  validates :lastName, presence: true, length: { minimum: 3, maximum: 100 }
 end
