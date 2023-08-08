@@ -13,7 +13,7 @@ RSpec.describe Category, type: :model do
 
   describe 'validations' do
     let(:author) { User.create(firstName: 'fName', lastName: 'lName', email: 'test@test.com', password: 'password') }
-    let(:category) { Category.create(name: 'foods', icon: 'icon address as string', author: author) }
+    let(:category) { Category.create(name: 'foods', icon: 'icon address as string', author:) }
 
     it 'is valid with valid attributes' do
       expect(category).to be_valid

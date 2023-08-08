@@ -13,7 +13,7 @@ RSpec.describe Purchase, type: :model do
 
   describe 'validations' do
     let(:author) { User.create(firstName: 'fName', lastName: 'lName', email: 'test@test.com', password: 'password') }
-    let(:purchase) { Purchase.create(name: 'foods', amount: 12, author: author) }
+    let(:purchase) { Purchase.create(name: 'foods', amount: 12, author:) }
 
     it 'is valid with valid attributes' do
       expect(purchase).to be_valid
