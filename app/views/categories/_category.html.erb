@@ -9,4 +9,13 @@
     <%= category.icon %>
   </p>
 
+  <% if @purchases %>
+    <% @purchases.each do |purchase| %>
+      <%= purchase.name %>:
+      $<%= purchase.amount %>
+    <% end %>
+  <% end %>
+  <br>
+  <br>
+  <%= link_to 'Add Purchase', new_purchase_path%>
 </div>

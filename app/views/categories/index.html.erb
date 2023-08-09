@@ -1,13 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Categories</h1>
 
 <div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+  <% if can? :read, @categories%>
+    <% @categories.each do |category| %>
+      <%= render category %>
+      <p>
+        <%= link_to "Show this category", category %>
+      </p>
+    <% end %>
   <% end %>
 </div>
 

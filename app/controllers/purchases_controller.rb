@@ -1,4 +1,5 @@
 class PurchasesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_purchase, only: %i[show edit update destroy]
 
   # GET /purchases or /purchases.json
@@ -20,6 +21,8 @@ class PurchasesController < ApplicationController
   # POST /purchases or /purchases.json
   def create
     @purchase = Purchase.new(purchase_params)
+    @purchase.author_id = current_user.id
+    @categories = Category.where(id: purchase_params[:category_ids])
 
     respond_to do |format|
       if @purchase.save
@@ -64,6 +67,6 @@ class PurchasesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def purchase_params
-    params.require(:purchase).permit(:name, :amount, :author_id)
+    params.require(:purchase).permit(:name, :amount, :author_id, category_ids: [])
   end
 end

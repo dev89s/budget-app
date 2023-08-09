@@ -1,13 +1,19 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!, only: %i[show new edit create update destroy]
   before_action :set_category, only: %i[show edit update destroy]
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.all.order(created_at: :desc)
+    if !user_signed_in?
+      redirect_to splash_screen_index_path
+    end
   end
 
   # GET /categories/1 or /categories/1.json
-  def show; end
+  def show
+    @purchases = Purchase.joins(:categories)
+  end
 
   # GET /categories/new
   def new
@@ -20,6 +26,7 @@ class CategoriesController < ApplicationController
   # POST /categories or /categories.json
   def create
     @category = Category.new(category_params)
+    @category.author_id = current_user.id
 
     respond_to do |format|
       if @category.save

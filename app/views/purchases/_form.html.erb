@@ -22,8 +22,11 @@
   </div>
 
   <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.text_field :author_id %>
+    <h4 style="margin-bottom: 5px; margin-top: 20px"> Categories: </h4>
+    <div style="margin-bottom: 10px">
+      <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
+      <%# <%= form.select :category, Category.all.collect { |category| [category.name, category.id] } %>
+    </div>
   </div>
 
   <div>
