@@ -15,6 +15,17 @@
     <p style="color: red" class="alert"><%= alert %></p>
     <% if user_signed_in? %>
       <div style="display:flex; gap:10px; align-items: center">
+        <% if current_page? root_path %>
+        <% elsif (current_page? purchase_url(:new)) %>
+          <%= link_to '< back', :back %>
+        <% else %>
+          <%if request.params[:controller] == 'purchases' && request.params[:action] == 'create' && cookies[:curr_cat] %>
+
+            <%= link_to '< back', category_url(cookies[:curr_cat]) %>
+          <% else %>
+            <%= link_to '< back', root_path%>
+          <%end%>
+        <% end %>
         <span> Welcome <%= current_user.firstName%> </span>
         <%= button_to 'Logout', destroy_user_session_path, method: "delete" %>
       </div>

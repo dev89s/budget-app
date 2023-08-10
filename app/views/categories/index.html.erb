@@ -3,9 +3,10 @@
 <div id="categories">
   <% if can? :read, @categories%>
     <% @categories.each do |category| %>
-      <%= render category %>
+      <%= link_to category do %>
+        <%= render category %>
+      <% end %>
       <p>
-        <%= link_to "Show this category", category %>
       </p>
     <% end %>
   <% end %>

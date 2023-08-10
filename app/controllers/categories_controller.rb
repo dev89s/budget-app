@@ -12,7 +12,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
-    @purchases = Purchase.joins(:categories)
+    @purchases = Purchase.joins(:categories).where(categories: {id: params[:id]}).order(created_at: :desc)
+    @amount = @purchases.sum(:amount)
   end
 
   # GET /categories/new
@@ -30,7 +31,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to category_url(@category), notice: 'Category was successfully created.' }
+        format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }

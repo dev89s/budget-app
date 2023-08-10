@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ /* category-index */
+.category-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

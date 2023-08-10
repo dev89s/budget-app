@@ -1,21 +1,26 @@
 <div id="<%= dom_id category %>">
-  <p>
+  <div class="category-container">
     <strong>Name:</strong>
-    <%= category.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= category.icon %>
-  </p>
+    <span><%= category.name %></span>
+    <img src=<%= category.icon %> height='60px'>
+  </div>
 
   <% if @purchases %>
     <% @purchases.each do |purchase| %>
+    <div style="display: flex; align-items: center; gap: 15px; margin-block: 10px">
       <%= purchase.name %>:
       $<%= purchase.amount %>
+      <%= button_to purchase_path(purchase), {method: :delete, params: { category: category },
+        style: "display: flex; align-items: center; border: 1px solid rgba(0,0,0,0.5); border-radius: 3px; background-color: #fff"} do %>
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" height="20px">
+      <% end %>
+      <br>
+    </div>
     <% end %>
+    <br>
   <% end %>
-  <br>
-  <br>
-  <%= link_to 'Add Purchase', new_purchase_path%>
+  <% if (!current_page? categories_path) && (!current_page? root_path) %>
+    <%= button_to 'Add Purchase', new_purchase_path, method: 'get', params: { category: category }%>
+    <br>
+  <% end %>
 </div>
