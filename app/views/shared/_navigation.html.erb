@@ -42,11 +42,22 @@
   </div>
 <% else %>
   <% if request.path != '/welcome' %>
-    <%= link_to root_path do%>
-      <svg class="back-arrow" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-          <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"/>
-          <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"/>
-      </svg>
-    <% end %>
+    <div class='nav-bar'>
+      <div class='nav-second-row'>
+        <%= link_to root_path do %>
+          <%= render 'shared/back_arrow' %>
+        <% end %>
+        <% if current_page? new_user_session_path %>
+          <h2><%="Login"%></h2>
+        <% elsif current_page? new_user_registration_path%>
+          <h2><%="Sign Up"%></h2>
+        <% elsif current_page? new_user_password_path%>
+          <h2><%="Reset Password"%></h2>
+        <% end %>
+        <%= link_to :back, class: 'hidden-link' do %>
+          <%= render 'shared/back_arrow' %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 <% end %>
