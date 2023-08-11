@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+  before_create { |category| category.name = category.name.split(' ').map {|name| name.capitalize}.join(' ')}
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   has_and_belongs_to_many :purchases
 
