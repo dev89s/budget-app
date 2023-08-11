@@ -2,7 +2,6 @@ class PurchasesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_purchase, only: %i[show edit update destroy]
 
-
   # GET /purchases or /purchases.json
   def index
     @purchases = Purchase.all
@@ -15,6 +14,7 @@ class PurchasesController < ApplicationController
   def new
     @purchase = Purchase.new
     @categories = Category.all
+    @title = 'New Purchase'
   end
 
   # GET /purchases/1/edit
@@ -25,6 +25,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
     @purchase.author_id = current_user.id
     @categories = Category.all
+    @title = 'New Purchase'
 
     respond_to do |format|
       if @purchase.save
