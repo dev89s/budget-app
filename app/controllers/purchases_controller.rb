@@ -13,7 +13,7 @@ class PurchasesController < ApplicationController
   # GET /purchases/new
   def new
     @purchase = Purchase.new
-    @categories = Category.all
+    @categories = Category.where(author: current_user)
     @title = 'New Purchase'
   end
 
