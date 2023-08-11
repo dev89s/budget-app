@@ -1,4 +1,4 @@
-<%= form_with(model: purchase) do |form| %>
+<%= form_with(model: purchase, class: 'new-purchase-form') do |form| %>
   <% if purchase.errors.any? %>
     <div style="color: red">
       <h4><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h4>
@@ -12,23 +12,22 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, autofocus: true %>
+    <%= form.text_field :name, autofocus: true, placeholder: 'Name', class: 'new-purchase-input' %>
+
+    <%= form.number_field :amount, step: 0.01, placeholder: 'Amount', class: 'new-purchase-input' %>
   </div>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount, step: 0.01 %>
-  </div>
-
-  <div>
-    <h4 style="margin-bottom: 5px; margin-top: 20px"> Categories: </h4>
-    <div style="margin-bottom: 10px">
-      <%= form.collection_check_boxes :category_ids, @categories, :id, :name %>
+  <div class="category-checkboxes">
+    <h4 class='category-checkbox-header'> Categories: </h4>
+    <div class='category-checkbox-list'>
+      <%= form.collection_check_boxes :category_ids, @categories, :id, :name do |category| %>
+        <span class='new-pur-checkbox-col'>
+          <%= category.check_box class: 'new-purchase-cat-box'%>
+          <%= category.label class: 'new-purchase-cat-label'%>
+        </span>
+      <% end %>
     </div>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= form.submit "Create Purchase", class:'new-pur-submit' %>
 <% end %>

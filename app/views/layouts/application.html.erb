@@ -7,29 +7,22 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <p style="color: green"><%= notice %></p>
-    <p style="color: red" class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-      <div style="display:flex; gap:10px; align-items: center">
-        <% if current_page? root_path %>
-        <% elsif (current_page? purchase_url(:new)) %>
-          <%= link_to '< back', :back %>
-        <% else %>
-          <%if request.params[:controller] == 'purchases' && request.params[:action] == 'create' && cookies[:curr_cat] %>
-
-            <%= link_to '< back', category_url(cookies[:curr_cat]) %>
-          <% else %>
-            <%= link_to '< back', root_path%>
-          <%end%>
-        <% end %>
-        <span> Welcome <%= current_user.firstName%> </span>
-        <%= button_to 'Logout', destroy_user_session_path, method: "delete" %>
+    <% if !current_page? splash_screen_index_path %>
+      <div class="top-bar">
+        <%= render "shared/navigation" %>
       </div>
     <% end %>
-    <%= yield %>
+    <section class='main-section'>
+      <p style="color: green" class='notice'><%= notice %></p>
+      <p style="color: red" class="alert notice"><%= alert %></p>
+      <%= yield %>
+    </section>
   </body>
 </html>
