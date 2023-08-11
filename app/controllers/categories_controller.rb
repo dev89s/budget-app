@@ -4,25 +4,28 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all.order(created_at: :desc)
-    if !user_signed_in?
-      redirect_to splash_screen_index_path
-    end
+    @categories = Category.where(author: current_user).order(created_at: :desc)
+    @title = 'Categories'
+    return if user_signed_in?
+
+    redirect_to splash_screen_index_path
   end
 
   # GET /categories/1 or /categories/1.json
   def show
-    @purchases = Purchase.joins(:categories).where(categories: {id: params[:id]}).order(created_at: :desc)
-    @amount = @purchases.sum(:amount)
+    @title = 'Purchases'
   end
 
   # GET /categories/new
   def new
     @category = Category.new
+    @title = 'New Category'
   end
 
   # GET /categories/1/edit
-  def edit; end
+  def edit
+    @title = 'Edit Category'
+  end
 
   # POST /categories or /categories.json
   def create
@@ -42,6 +45,7 @@ class CategoriesController < ApplicationController
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
+    @title = 'Update Category'
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to category_url(@category), notice: 'Category was successfully updated.' }
