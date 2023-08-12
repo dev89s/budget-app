@@ -53,10 +53,11 @@ class PurchasesController < ApplicationController
 
   # DELETE /purchases/1 or /purchases/1.json
   def destroy
+    @category = @purchase.category_ids[0]
     @purchase.destroy
 
     respond_to do |format|
-      format.html { redirect_to category_url(params[:category]), notice: 'Purchase was successfully destroyed.' }
+      format.html { redirect_to category_url(@category), notice: 'Purchase was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
