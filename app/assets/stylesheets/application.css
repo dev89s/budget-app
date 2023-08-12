@@ -34,6 +34,14 @@ body {
   background-color: #f5f6f8;
 }
 
+.login-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 5px;
+  background-color: #f5f6f8;
+}
+
 .notice {
   margin-top: 5px;
   margin-inline: 5px;
@@ -107,6 +115,58 @@ body {
 
 .hidden-link {
   visibility: hidden;
+}
+
+/* Splash Screen */
+.splash-screen-items {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.splash-logo {
+  font-family: Proxima Nova, Figtree, sans-serif;
+  font-size: 2.2em;
+  color: #434b54;
+  margin-top: 30vh;
+}
+
+.space-holder {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.splash-login-signup {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  text-align: center;
+}
+
+.splash-login-link {
+  font-size: 1.2em;
+  padding: 25px;
+  margin: 0;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #3677c1;
+  color: #eee;
+  text-decoration: none;
+}
+
+.splash-signup-link {
+  font-size: 1.2em;
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  border: none;
+  color: #434b54;
+  margin-bottom: 40px;
+  text-decoration: none;
 }
 
 /* category-partial */

@@ -19,10 +19,16 @@
         <%= render "shared/navigation" %>
       </div>
     <% end %>
-    <section class='main-section'>
-      <p style="color: green" class='notice'><%= notice %></p>
-      <p style="color: red" class="alert notice"><%= alert %></p>
-      <%= yield %>
-    </section>
+    <% if current_page? splash_screen_index_path %>
+      <section class='login-main'>
+    <% else %>
+      <section class='main-section'>
+    <% end %>
+      <div>
+        <p style="color: green" class='notice'><%= notice %></p>
+        <p style="color: red" class="alert notice"><%= alert %></p>
+      </div>
+        <%= yield %>
+      </section>
   </body>
 </html>
