@@ -60,7 +60,7 @@ You can find a live demo of the app on [Render.com](https://snapbudget.onrender.
 
 ## 🎬 Representaition <a id="representation"></a>
 
-This is the link to the representation of the app by the author: [to be update](https://drive.google.com/file/d/1M6jwAPK3j7zMV30VdJZXVwqGQlK7blVG/view?usp=sharing)
+This is the link to the representation of the app by the author: [Video link](https://drive.google.com/file/d/1M6jwAPK3j7zMV30VdJZXVwqGQlK7blVG/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
