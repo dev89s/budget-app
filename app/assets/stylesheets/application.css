@@ -384,7 +384,6 @@ div:has(.new-cat-input) {
 
 .forget-link {
   text-align: center;
-  text-decoration: none;
   color: #434b54;
   font-size: 1.1em;
 }
@@ -401,4 +400,63 @@ div:has(.new-cat-input) {
   border: none;
   background-color: #5fb523;
   color: #eee;
+}
+
+/* Sign Up */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.min-char-and-links {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+  align-items: center;
+  padding: 20px;
+}
+
+.signup-input {
+  font-size: 1.2em;
+  border: none;
+  padding-inline: 20px;
+  padding-block: 15px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.signup-submit {
+  font-size: 1.2em;
+  padding: 25px;
+  margin: 0;
+  width: 100%;
+  border: none;
+  background-color: #5fb523;
+  color: #eee;
+}
+
+.min-char {
+  align-self: flex-start;
+  font-size: 1.2em;
+  color: #434b54;
+}
+
+.signup-login-disc {
+  font-size: 1.1em;
+  color: #434b54;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.signup-login-link {
+  font-size: 1.2em;
+  color: #434b54;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  width: 30%;
 }
