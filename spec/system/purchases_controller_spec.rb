@@ -8,7 +8,7 @@ RSpec.describe 'Purchases', type: :system do
       firstName: 'Sasan',
       lastName: 'Moshir',
       email: 'user@example.com',
-      password: 'password',
+      password: 'password'
     )
     @category = Category.create(
       name: 'Cat1',
@@ -62,7 +62,7 @@ RSpec.describe 'Purchases', type: :system do
     end
 
     scenario 'should have the create purchase button' do
-      expect(find(class: 'new-pur-submit').value).to eq("Create Purchase")
+      expect(find(class: 'new-pur-submit').value).to eq('Create Purchase')
     end
   end
 end

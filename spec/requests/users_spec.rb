@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe User, type: :request do
   let(:user) { User.new(firstName: 'Sasan', lastName: 'Moshir', email: 'email@gmail.com', password: '123123') }
 
-
   def authenticate_user(user)
     post user_session_path, params: { user: { email: user.email, password: user.password } }
     follow_redirect!

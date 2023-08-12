@@ -8,7 +8,7 @@ RSpec.describe 'Categories', type: :system do
       firstName: 'Sasan',
       lastName: 'Moshir',
       email: 'user@example.com',
-      password: 'password',
+      password: 'password'
     )
     @category = Category.create(
       name: 'Cat1',
@@ -18,7 +18,7 @@ RSpec.describe 'Categories', type: :system do
     sign_in @user
   end
 
-  describe "#index" do
+  describe '#index' do
     before(:each) do
       visit root_path
     end
@@ -75,7 +75,7 @@ RSpec.describe 'Categories', type: :system do
 
     scenario 'clicking on add purchase should go to new purchase page' do
       click_on 'Add Purchase'
-      assert_current_path purchase_path(:new, params: {category: @category.id})
+      assert_current_path purchase_path(:new, params: { category: @category.id })
     end
   end
 end
