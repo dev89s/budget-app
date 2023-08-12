@@ -1,0 +1,33 @@
+<div id="<%= dom_id category %>" class="category-partial">
+  <div class="category-container">
+    <div class='category-identity'>
+      <% if (current_page? categories_path) || (current_page? root_path) %>
+        <img src=<%= category.icon %> height='60px'>
+      <% end %>
+        <span class='category-name'>
+          <%= category.name %>
+        </span>
+    </div>
+    <span class='total'>
+      <% @purchases = Purchase.joins(:categories).where(categories: category).order(created_at: :desc) %>
+      $<%= @purchases.sum(:amount)%>
+    </span>
+  </div>
+
+  <% if current_page? category_path(category) %>
+    <div class="purchase-list">
+      <% @purchases.each do |purchase| %>
+        <div class='purchase-items'>
+          <div>
+            <%= purchase.name %>:
+            <span class="pur-amount">$<%= purchase.amount %></span>
+          </div>
+          <%= button_to purchase_path(purchase), {method: :delete, params: { category: category }, class: "delete-btn"} do %>
+            <%= render 'shared/trash_can'%>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>

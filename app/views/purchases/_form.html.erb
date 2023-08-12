@@ -1,0 +1,33 @@
+<%= form_with(model: purchase, class: 'new-purchase-form') do |form| %>
+  <% if purchase.errors.any? %>
+    <div style="color: red">
+      <h4><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h4>
+
+      <ul>
+        <% purchase.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field :name, autofocus: true, placeholder: 'Name', class: 'new-purchase-input' %>
+
+    <%= form.number_field :amount, step: 0.01, placeholder: 'Amount', class: 'new-purchase-input' %>
+  </div>
+
+  <div class="category-checkboxes">
+    <h4 class='category-checkbox-header'> Categories: </h4>
+    <div class='category-checkbox-list'>
+      <%= form.collection_check_boxes :category_ids, @categories, :id, :name do |category| %>
+        <span class='new-pur-checkbox-col'>
+          <%= category.check_box class: 'new-purchase-cat-box'%>
+          <%= category.label class: 'new-purchase-cat-label'%>
+        </span>
+      <% end %>
+    </div>
+  </div>
+
+  <%= form.submit "Create Purchase", class:'new-pur-submit' %>
+<% end %>

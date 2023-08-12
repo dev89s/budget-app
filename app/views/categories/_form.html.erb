@@ -1,0 +1,21 @@
+<%= form_with(model: category, class: 'new-category-form') do |form| %>
+  <div class="error-input">
+    <% if category.errors.any? %>
+      <div style="color: red">
+        <h4><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h4>
+
+        <ul>
+          <% category.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= form.text_field :name, placeholder: 'Name', class:'new-cat-input' %>
+
+    <%= form.text_field :icon, placeholder: 'Icon Link', class:'new-cat-input' %>
+  </div>
+
+  <%= form.submit 'Create Category', class: 'new-cat-submit' %>
+
+<% end %>

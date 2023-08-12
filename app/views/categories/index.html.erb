@@ -1,0 +1,15 @@
+<div class='categories-main-container'>
+  <div id="categories" class='categories-list'>
+    <% if can? :read, @categories%>
+      <% @categories.each do |category| %>
+        <%= link_to category do %>
+          <%= render category %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class='new-category-link-container'>
+    <%= link_to "New Category", new_category_path, class:'new-category-link' %>
+  </div>
+</div>
