@@ -9,6 +9,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [🎬 Representation](#representation)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -51,9 +52,15 @@ so that you have a rough idea of how much you're spending overall. It is impleme
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a id="live-demo"></a>
 
 You can find a live demo of the app on [Render.com](https://snapbudget.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🎬 Representaition <a id="representation"></a>
+
+This is the link to the representation of the app by the author: [to be update](https://drive.google.com/file/d/1M6jwAPK3j7zMV30VdJZXVwqGQlK7blVG/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -125,7 +132,7 @@ To run tests, run the following command:
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a id="authors"></a>
+## 👥 Author <a id="authors"></a>
 
 👤 **Sasan Moshirabadi**
 
@@ -148,7 +155,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/stephenkati/recipe_app/issues).
+Feel free to check the [issues page](https://github.com/dev89s/budget-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
