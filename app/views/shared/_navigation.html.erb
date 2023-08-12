@@ -53,6 +53,8 @@
           <h2><%="Sign Up"%></h2>
         <% elsif current_page? new_user_password_path%>
           <h2><%="Reset Password"%></h2>
+        <% elsif current_page? edit_user_password_path%>
+          <h2><%="Set New Password"%></h2>
         <% end %>
         <%= link_to :back, class: 'hidden-link' do %>
           <%= render 'shared/back_arrow' %>

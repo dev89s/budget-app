@@ -34,7 +34,7 @@ body {
   background-color: #f5f6f8;
 }
 
-.login-main {
+.splash-main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -519,4 +519,31 @@ div:has(.new-cat-input) {
   padding: 15px;
   border-radius: 5px;
   width: 30%;
+}
+
+/* Pass Reset */
+.pass-reset-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.reset-password-input {
+  font-size: 1.2em;
+  border: none;
+  padding-inline: 20px;
+  padding-block: 15px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.pass-reset-submit {
+  font-size: 1.2em;
+  padding: 25px;
+  margin: 0;
+  width: 100%;
+  border: none;
+  background-color: #5fb523;
+  color: #eee;
 }
