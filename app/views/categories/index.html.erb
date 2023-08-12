@@ -1,14 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<div class='categories-main-container'>
+  <div id="categories" class='categories-list'>
+    <% if can? :read, @categories%>
+      <% @categories.each do |category| %>
+        <%= link_to category do %>
+          <%= render category %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 
-<h1>Categories</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+  <div class='new-category-link-container'>
+    <%= link_to "New Category", new_category_path, class:'new-category-link' %>
+  </div>
 </div>
-
-<%= link_to "New category", new_category_path %>

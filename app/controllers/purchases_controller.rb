@@ -1,4 +1,5 @@
 class PurchasesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_purchase, only: %i[show edit update destroy]
 
   # GET /purchases or /purchases.json
@@ -12,6 +13,8 @@ class PurchasesController < ApplicationController
   # GET /purchases/new
   def new
     @purchase = Purchase.new
+    @categories = Category.where(author: current_user)
+    @title = 'New Purchase'
   end
 
   # GET /purchases/1/edit
@@ -20,10 +23,13 @@ class PurchasesController < ApplicationController
   # POST /purchases or /purchases.json
   def create
     @purchase = Purchase.new(purchase_params)
+    @purchase.author_id = current_user.id
+    @categories = Category.all
+    @title = 'New Purchase'
 
     respond_to do |format|
       if @purchase.save
-        format.html { redirect_to purchase_url(@purchase), notice: 'Purchase was successfully created.' }
+        format.html { redirect_to category_url(@purchase.categories[0]), notice: 'Purchase was successfully created.' }
         format.json { render :show, status: :created, location: @purchase }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,7 +56,7 @@ class PurchasesController < ApplicationController
     @purchase.destroy
 
     respond_to do |format|
-      format.html { redirect_to purchases_url, notice: 'Purchase was successfully destroyed.' }
+      format.html { redirect_to category_url(params[:category]), notice: 'Purchase was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +70,6 @@ class PurchasesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def purchase_params
-    params.require(:purchase).permit(:name, :amount, :author_id)
+    params.require(:purchase).permit(:name, :amount, :author_id, category_ids: [])
   end
 end

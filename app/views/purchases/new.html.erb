@@ -1,9 +1,3 @@
-<h1>New purchase</h1>
-
 <%= render "form", purchase: @purchase %>
-
+<% params[:category] ? cookies[:curr_cat] = params[:category] : nil %>
 <br>
-
-<div>
-  <%= link_to "Back to purchases", purchases_path %>
-</div>
