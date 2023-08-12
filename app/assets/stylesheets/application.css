@@ -32,6 +32,7 @@ body {
   min-height: 85vh;
   padding-top: 5px;
   background-color: #f5f6f8;
+  color: #434b54;
 }
 
 .splash-main {
@@ -221,6 +222,11 @@ body {
   gap: 5px;
 }
 
+.pur-amount {
+  font-family: Proxima Nova, Figtree, sans-serif;
+  font-weight: 600;
+}
+
 .new-category-link {
   align-self: center;
   text-decoration: none;
@@ -242,6 +248,8 @@ body {
 
 .total {
   padding-inline: 5px;
+  font-family: Proxima Nova, Figtree, sans-serif;
+  font-weight: 600;
 }
 
 /* Category-Show -//- Purchase List */
