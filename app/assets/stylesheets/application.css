@@ -337,3 +337,68 @@ div:has(.new-cat-input) {
   background-color: #5fb523;
   color: #eee;
 }
+
+/* Login */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#user_email {
+  border-top: 1px solid #eee;
+}
+
+.login-input {
+  font-size: 1.2em;
+  border: none;
+  padding-inline: 20px;
+  padding-block: 15px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.login-remember-forget {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 40px;
+  flex-grow: 1;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+}
+
+.remember-me label {
+  color: #434b54;
+}
+
+#user_remember_me {
+  height: 25px;
+  width: 25px;
+}
+
+.forget-link {
+  text-align: center;
+  text-decoration: none;
+  color: #434b54;
+  font-size: 1.1em;
+}
+
+.forget-link:hover {
+  cursor: pointer;
+}
+
+.login-submit {
+  font-size: 1.2em;
+  padding: 25px;
+  margin: 0;
+  width: 100%;
+  border: none;
+  background-color: #5fb523;
+  color: #eee;
+}
