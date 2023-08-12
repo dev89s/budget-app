@@ -172,6 +172,8 @@ If you like this project please show support by staring ⭐️.
 ## 🙏 Acknowledgments <a id="acknowledgements"></a>
 
 * We would like to thank my Microverse team and my coding partners for their support and guidance.
+* Also the [design reference](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+  is a work of the respected artist [Gregoire Valla](https://www.behance.net/gregoirevella) and is protected by [Creative Commons License](https://creativecommons.org/licenses/by-nc/4.0/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
