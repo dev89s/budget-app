@@ -8,6 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -46,7 +47,13 @@ so that you have a rough idea of how much you're spending overall. It is impleme
 
 - **[Purchases]**
 - **[Categories]**
-- **[Summery of Purchases both categorically or overal]**
+- **[Purchase amount for a whole category or single purchase]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+You can find a live demo of the app on [Render.com](https://snapbudget.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,7 +77,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```
-  git clone https://github.com/stephenkati/recipe_app.git
+  git clone https://github.com/stephenkati/budget-app.git
 ```
 
 ### Install
