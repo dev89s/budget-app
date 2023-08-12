@@ -77,7 +77,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```
-  git clone https://github.com/stephenkati/budget-app.git
+  git clone https://github.com/dev89/budget-app.git
 ```
 
 ### Install
