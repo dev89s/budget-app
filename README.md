@@ -26,9 +26,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Budget App] <a id="about-project"></a>
+# 📖 [Snapbudget] <a id="about-project"></a>
 
-**[Budget App]** is a application that keeps track of your purchases and gives you the ability to put each purchase ina category
+**[Snapbudget]** is a application that keeps track of your purchases and gives you the ability to put each purchase ina category
 so that you have a rough idea of how much you're spending overall. It is implemented using Ruby on Rails.
 
 ## 🛠 Built With <a id="built-with"></a>
